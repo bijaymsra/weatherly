@@ -1,5 +1,5 @@
 # Weatherly - "A Dynamic weather Forecasting Web Application"
--> Weatherly is a weather forecast web application designed to provide users with detailed weather information in a dynamic, interactive, and visually appealing way. The application uses React for the frontend, Node.js for the backend, and MySQL as the database.
+Weatherly is a weather forecast web application designed to provide users with detailed weather information in a dynamic, interactive, and visually appealing way. The application uses React for the frontend, Node.js for the backend, and MySQL as the database.
 
 # Features
 1. City-Based Weather Search: Users can search for any city, and Weatherly will display the temperature, weather conditions, humidity, and a dynamic map showing the city.
@@ -47,7 +47,7 @@ weatherly/
 
 # Installation and Setup
 Clone the repository:
--> git clone https://github.com/bijaymsra/weatherly.git
+git clone https://github.com/bijaymsra/weatherly.git
 
 # Navigate to the project directory and install dependencies for both client and server:
 cd weatherly/client
@@ -64,10 +64,10 @@ npm start
 
 
 # Contributing
--> Feel free to fork this repository, create a new branch, and submit a pull request.
+Feel free to fork this repository, create a new branch, and submit a pull request.
 
 # License
--> This project is licensed under the MIT License.
+This project is licensed under the MIT License.
 
 
 
