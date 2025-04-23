@@ -2,7 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router(); // Use router for routing
 const db = require('../database');
-const apiKey = '42f60dd279e8af008fb2be88ea719e7d'; 
+require('dotenv').config();
+const apiKey = process.env.WEATHER_API_KEY;
 
 router.post('/', async (req, res) => {
     const { city, lat, lon } = req.body; // Getting from frontend
