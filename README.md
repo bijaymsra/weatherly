@@ -56,11 +56,11 @@ weatherly/
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/
-│   └── server.js
-├── database/            # MySQL schema and setup
-│   └── schema.sql
+│   ├── server.js
+│   ├── database.js      # MySQL schema 
+│   └── package.json
 ├── README.md
-└── package.json
+
 ```
 ---
 
