@@ -85,31 +85,85 @@ weatherly/
 
 ## 🛠️ Installation & Setup
 
-1. Clone the repository:
 ```Bash
+1️⃣ Clone the Repository:
 git clone https://github.com/bijaymsra/weatherly.git
-```
+cd weatherly
 
-2. Navigate to the project directory and install dependencies:
-```
-cd weatherly/client
+2️⃣ Install Dependencies:
+cd client
 npm install
 
 cd ../server
 npm install
-Set up the MySQL database:
-```
 
-3. Use the provided schema at database/schema.sql to initialize the database.
-Start the application:
+3️⃣ Set Up the MySQL Database:
 
-## Start backend
+- Create the database:
+  mysql -u root -p
+  CREATE DATABASE weatherly;
+  USE weatherly;
+
+- You can run the schema manually:
+
+-- Create 'users' table
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    age INT DEFAULT NULL,
+    country VARCHAR(100) DEFAULT NULL,
+    time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    city VARCHAR(100) DEFAULT NULL
+);
+
+-- Create 'registry' table
+CREATE TABLE registry (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    registry_email VARCHAR(255) UNIQUE DEFAULT NULL,
+    otp VARCHAR(6) NOT NULL,
+    time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    expiry_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP + INTERVAL 5 MINUTE
+);
+
+-- Create 'weather' table
+CREATE TABLE weather (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) DEFAULT NULL,
+    city VARCHAR(100) DEFAULT NULL,
+    visibility DOUBLE DEFAULT NULL,
+    latitude DECIMAL(8,6) DEFAULT NULL,
+    longitude DECIMAL(9,6) DEFAULT NULL,
+    temperature DECIMAL(5,2) DEFAULT NULL,
+    humidity DECIMAL(5,2) DEFAULT NULL,
+    condition VARCHAR(100) DEFAULT NULL,
+    time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create 'users_feedback' table
+CREATE TABLE users_feedback (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    current_address VARCHAR(255) NOT NULL,
+    contact_no VARCHAR(15) NOT NULL,
+    feedback TEXT NOT NULL,
+    time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+4️⃣ Start the Application:
+
+## Start Backend
 cd weatherly/server
 node server.js
 
-## Start frontend
+## Start Frontend
 cd ../client
 npm start
+
+
+```
 
 ---
 
