@@ -94,7 +94,7 @@ cd weatherly
 cd client
 npm install
 
-cd ../server
+cd server
 npm install
 
 3️⃣ Set Up the MySQL Database:
@@ -160,7 +160,7 @@ node server.js
 
 ## Start Frontend
 cd ../client
-npm start
+npm run dev
 
 
 ```
